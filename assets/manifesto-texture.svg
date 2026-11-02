@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" seed="7" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.095"/></feComponentTransfer></filter>
+    <linearGradient id="rip" x2="1" y2=".3"><stop stop-color="#e4c8ff" stop-opacity=".22"/><stop offset="1" stop-color="#6c39b2" stop-opacity=".12"/></linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="transparent"/>
+  <path d="M0 95 L100 93 L150 103 L235 96 L300 108 L385 93 L445 112 L550 105 L610 92 L712 96 L780 86 L890 110 L950 92 L1020 98 L1110 89 L1205 101 L1294 90 L1382 105 L1480 93 L1600 108" fill="none" stroke="#9b80c0" opacity=".4" stroke-width="9"/>
+  <path d="M0 103 L100 101 L150 111 L235 104 L300 116 L385 101 L445 120 L550 113 L610 100 L712 104 L780 94 L890 118 L950 100 L1020 106 L1110 97 L1205 109 L1294 98 L1382 113 L1480 101 L1600 116" fill="none" stroke="#e7ddf2" opacity=".23" stroke-width="2"/>
+  <path d="M642 725 Q672 690 710 728 T776 728 T836 706" fill="none" stroke="#bc72d9" stroke-width="2" opacity=".42"/>
+  <path d="M731 242 l15 0 m-7 -8 v16" stroke="#d5b5fa" stroke-width="2" opacity=".47"/>
+  <path d="M1412 642 l18 0 m-9 -9 v18" stroke="#d5b5fa" stroke-width="2" opacity=".54"/>
+  <path d="M575 178 Q625 163 672 186" stroke="#8d61cb" stroke-width="1.5" fill="none" opacity=".37"/>
+  <circle cx="635" cy="200" r="43" fill="none" stroke="#9560c6" opacity=".19" stroke-width="2"/>
+  <circle cx="635" cy="200" r="60" fill="none" stroke="#b58adc" opacity=".13" stroke-width="2" stroke-dasharray="6,7"/>
+  <path d="M-30 826 L91 831 L159 812 L232 832 L298 814 L384 825 L442 813 L503 829 L570 809 L625 821 L700 808" stroke="url(#rip)" stroke-width="13" fill="none"/>
+  <path d="M1125 84 l27 -17 l-8 36 m4 -24 l24 -9" fill="none" stroke="#d5aeed" stroke-width="2" opacity=".25"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity=".65"/>
+</svg>

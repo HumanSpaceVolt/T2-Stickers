@@ -1,0 +1,43 @@
+/* T²-Stickers V10 — HERO de capas fieles a ocho originales. Sin parches, rectángulos ni reinterpretaciones. */
+.hero-v10 {background:#0c0915; isolation:isolate;}
+.hero-v10 .hero-collage, .hero-v10 .hero-night, .hero-v10 .hero-grain { display:none!important; }
+.hero-v10 .hero-art-stage { position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden; background:#0c0915 url('assets/hero-v10-charcoal.webp') center center/cover no-repeat; }
+.hero-v10 .hero-content{ position:relative;z-index:4;}
+.hero-v10 .hero-star{z-index:3;}
+.hero-v10 .hero-art-stage .t2-sticker {display:block;position:absolute;height:auto;object-fit:contain; filter:drop-shadow(0 9px 8px rgba(0,0,0,.77)) drop-shadow(0 0 9px rgba(168,80,241,.26)); max-width:none;pointer-events:none; }
+.hero-v10 .layer-velita { width:20%; left:47.7%; top:4.8%; z-index:1; transform:rotate(6deg); }
+.hero-v10 .layer-amuleto { width:17.8%; left:73.4%; top:8.8%; z-index:4; transform:rotate(5deg); }
+.hero-v10 .layer-alien { width:23%; left:38.5%; top:26.5%;z-index:3; transform:rotate(-12deg); }
+.hero-v10 .layer-vive { width:24%; left:52.8%; top:27%; z-index:6; transform:rotate(3deg); }
+.hero-v10 .layer-patineta { width:13.4%; left:84.3%; top:32.0%; z-index:7; transform:rotate(9deg); }
+.hero-v10 .layer-telescopio { width:26%; left:71.5%; top:51.7%;z-index:8; transform:rotate(4deg); }
+.hero-v10 .layer-luna { width:14.8%;left:40.5%;top:66%;z-index:9;transform:rotate(-6deg); }
+.hero-v10 .layer-astronauta { width:17.6%;left:57.0%;top:67.0%;z-index:7;transform:rotate(-4deg); }
+.hero-v10 .hero-art-stage .t2-sticker {transform-origin:center center;}
+/* maintain charcoal editorial text zone and sticky header behaviors from V7-V9. */
+@media(min-width:761px) and (max-width:1250px) {
+ .hero-v10 .layer-velita {top:12%}
+ .hero-v10 .layer-luna {top:66%}
+ .hero-v10 .layer-astronauta {top:67%}
+}
+@media(max-width:760px) {
+ .hero-v10{overflow:hidden;}
+ .hero-v10 .hero-art-stage { inset:auto 0 0; height: min(110vw,710px);background-image:url('assets/hero-v10-charcoal-mobile.webp'); background-position:center bottom;background-size:100% 100%; }
+ .hero-v10 .hero-content.shell {padding-bottom:min(111vw,700px)}
+ .hero-v10 .hero-art-stage .t2-sticker {filter:drop-shadow(0 5px 6px rgba(0,0,0,.68));}
+ .hero-v10 .layer-velita {width:35%;left:14%;top:1.5%;transform:rotate(5deg);z-index:2;}
+ .hero-v10 .layer-amuleto {width:30%;left:68%;top:0%;transform:rotate(5deg);z-index:3;}
+ .hero-v10 .layer-alien {width:47%;left:-3%;top:27%;transform:rotate(-10deg);z-index:4;}
+ .hero-v10 .layer-vive {width:42%;left:31%;top:20%;transform:rotate(5deg);z-index:7;}
+ .hero-v10 .layer-patineta {width:25%;left:77%;top:32%;transform:rotate(4deg);z-index:8;}
+ .hero-v10 .layer-telescopio {width:42%;left:59%;top:54%;transform:rotate(4deg);z-index:9;}
+ .hero-v10 .layer-luna {width:28%;left:3%;top:66%;transform:rotate(-5deg);z-index:10;}
+ .hero-v10 .layer-astronauta {width:27%;left:35%;top:68%;transform:rotate(-4deg);z-index:9;}
+}
+@media(max-width:430px) {
+ .hero-v10 .hero-art-stage {height:102vw}
+ .hero-v10 .hero-content.shell {padding-bottom:103vw}
+ .hero-v10 .layer-amuleto{top:0%;}
+ .hero-v10 .layer-luna{top:70%;}
+ .hero-v10 .layer-astronauta{top:70%;}
+}

@@ -1,0 +1,612 @@
+/* ================================================================
+   T²-STICKERS · V16 — Carrito "Mi Pedido", Drawer y Ticket Digital
+   ================================================================ */
+
+.cart-toggle {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9ecff;
+  padding: 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+.cart-toggle:hover { color: #d6a4ff; }
+/* Indicador de foco circular para navegación por teclado.
+   Al cerrar el carrito con Escape, JavaScript retira el foco para que no quede resaltado. */
+.cart-toggle:focus-visible {
+  outline: 2px solid #d6a4ff;
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+.cart-toggle svg { width: 25px; height: 25px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+.cart-badge {
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  background: var(--lavender, #d0a5fa);
+  color: #110d19;
+  font-family: var(--t2-narrow, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 800;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  box-shadow: 0 0 10px rgba(208, 165, 250, 0.65);
+  pointer-events: none;
+}
+.cart-badge[hidden] { display: none !important; }
+
+/* Backdrop */
+.cart-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 6, 14, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.cart-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Drawer */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(100%, 420px);
+  background: #151221;
+  border-left: 1px solid rgba(208, 165, 250, 0.25);
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.7);
+  z-index: 2010;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cart-backdrop.is-open .cart-drawer { transform: translateX(0); }
+
+.cart-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(208, 165, 250, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-header h2 { font-family: Georgia, serif; font-size: 1.4rem; margin: 0; color: #fff; }
+.cart-close {
+  background: transparent;
+  border: none;
+  color: #c9c0d5;
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+.cart-close:hover { color: #fff; }
+
+.cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cart-empty-msg { color: #9d93ad; font-style: italic; margin: auto 0; text-align: center; }
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 55px 1fr auto;
+  gap: 12px;
+  background: #1c182c;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(208, 165, 250, 0.1);
+  align-items: center;
+}
+.cart-item img { width: 55px; height: 55px; object-fit: contain; background: #110e19; border-radius: 4px; }
+.cart-item-info h4 { margin: 0 0 4px; font-size: 0.95rem; color: #fff; font-family: var(--t2-readable, sans-serif); }
+.cart-item-meta { font-size: 0.76rem; color: #c9aafa; margin: 0 0 6px; }
+.cart-item-controls { display: flex; align-items: center; gap: 8px; }
+
+.qty-btn {
+  background: #2b223d;
+  border: 1px solid rgba(208, 165, 250, 0.3);
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+.qty-btn:hover { background: var(--lavender, #d0a5fa); color: #110d19; }
+.cart-item-qty { font-size: 0.9rem; font-weight: 700; color: #fff; }
+.cart-item-price { font-family: var(--t2-narrow, sans-serif); font-size: 1rem; font-weight: 700; color: #f5f0f9; }
+
+.cart-footer {
+  padding: 20px 24px;
+  border-top: 1px solid rgba(208, 165, 250, 0.15);
+  background: #120f1e;
+}
+.cart-subtotal-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.cart-subtotal-label { font-size: 0.95rem; color: #c9c0d5; }
+.cart-subtotal-amount { font-family: Georgia, serif; font-size: 1.45rem; font-weight: 700; color: var(--lavender, #d0a5fa); }
+.cart-disclaimer { font-size: 0.75rem; color: #9d93ad; margin: 0 0 16px; line-height: 1.35; }
+
+.cart-keep-exploring {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 10px;
+  background: transparent;
+  border: 1px dashed rgba(208, 165, 250, 0.25);
+  border-radius: 6px;
+  color: #d8adff;
+  font-family: var(--t2-readable, sans-serif);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.cart-keep-exploring span {
+  font-weight: 400;
+  color: #a899b8;
+  font-size: 0.78rem;
+}
+.cart-keep-exploring:hover {
+  background: rgba(208, 165, 250, 0.1);
+  border-color: rgba(208, 165, 250, 0.5);
+  color: #fff;
+}
+.cart-keep-exploring:hover span {
+  color: #e0c8fa;
+}
+
+/* Controles de compra en las fichas de catálogo */
+.product-card-actions { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.product-variants { display: flex; gap: 6px; }
+.product-variants select {
+  background: #181424;
+  border: 1px solid rgba(208, 165, 250, 0.25);
+  color: #f5f0f9;
+  font-size: 0.8rem;
+  padding: 5px 6px;
+  border-radius: 4px;
+  flex: 1;
+  font-family: var(--t2-readable, sans-serif);
+}
+.btn-add-cart {
+  background: rgba(208, 165, 250, 0.12);
+  border: 1px solid rgba(208, 165, 250, 0.35);
+  color: #f5f0f9;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--t2-narrow, sans-serif);
+  text-align: center;
+}
+.btn-add-cart:hover {
+  background: var(--lavender, #d0a5fa);
+  color: #120d1c;
+}
+
+/* Modal del Ticket Digital */
+.ticket-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 4, 10, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.ticket-modal[hidden] { display: none !important; }
+.ticket-paper {
+  background: #181424;
+  border: 1px dashed rgba(208, 165, 250, 0.45);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+  width: min(100%, 420px);
+  padding: 26px 22px;
+  border-radius: 8px;
+}
+.ticket-header { text-align: center; border-bottom: 1px dashed rgba(208, 165, 250, 0.3); padding-bottom: 12px; margin-bottom: 14px; }
+.ticket-brand { font-family: Georgia, serif; font-size: 1.25rem; font-weight: 700; color: #fff; margin: 0 0 4px; }
+.ticket-folio { font-family: monospace; font-size: 0.9rem; color: var(--lavender, #d0a5fa); letter-spacing: 0.1em; }
+.ticket-items { max-height: 220px; overflow-y: auto; margin-bottom: 14px; font-size: 0.86rem; }
+.ticket-row { display: flex; justify-content: space-between; margin-bottom: 8px; color: #e5def0; gap: 8px; }
+.ticket-total-row { border-top: 1px dashed rgba(208, 165, 250, 0.3); padding-top: 10px; display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+.ticket-notice { font-size: 0.74rem; color: #9d93ad; text-align: center; margin-bottom: 16px; }
+
+
+/* ================================================================
+   T²-STICKERS · V16.3 — Tipografía de búsqueda corregida
+   Amatic SC: encabezado | Permanent Marker: acento | Barlow: controles
+   ================================================================ */
+
+:root {
+  --t2-freestyle: 'Caveat', 'Brush Script MT', 'Segoe Script', 'Lucida Handwriting', cursive;
+}
+
+/* 1. Ocultar el menú hamburguesa (3 rayitas) en PC/Laptop, exclusivo para Móvil */
+@media (min-width: 761px) {
+  .site-header .menu-toggle,
+  .site-header .quick-menu {
+    display: none !important;
+  }
+}
+
+/* En móvil: transformación suave de las 3 rayitas a una X */
+@media (max-width: 760px) {
+  .site-header .menu-toggle span {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    transform-origin: center;
+  }
+  .site-header.menu-is-open .menu-toggle span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .site-header.menu-is-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  .site-header.menu-is-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* Despliegue fluido del menú móvil */
+  .site-header .site-nav {
+    display: flex !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.32s;
+  }
+  .site-header .site-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Mega-Menú de Colecciones en Grid (2 columnas, escalable a +12 líneas) */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav-dropdown-trigger .nav-chevron {
+  display: inline-block;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-dropdown:not(.is-force-closed):hover .nav-chevron,
+.nav-dropdown.is-open:not(.is-force-closed) .nav-chevron {
+  transform: rotate(180deg);
+  color: var(--lavender, #d0a5fa);
+}
+
+.mega-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -16px;
+  width: 440px;
+  background: rgba(18, 13, 29, 0.96);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(208, 165, 250, 0.28);
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.78), 0 0 25px rgba(173, 115, 239, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px) scale(0.98);
+  transform-origin: top left;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.28s;
+  z-index: 1200;
+}
+
+/* Puente invisible para que el mouse no pierda el hover al bajar al menú */
+.mega-menu::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
+@media (min-width: 761px) {
+  .nav-dropdown:not(.is-force-closed):hover .mega-menu,
+  .nav-dropdown.is-open:not(.is-force-closed) .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mega-menu-header {
+  font-family: var(--t2-freestyle);
+  font-size: 1.35rem;
+  color: #d8a9ff;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(208, 165, 250, 0.2);
+  letter-spacing: 0.02em;
+}
+
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.mega-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 12px !important;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(208, 165, 250, 0.1);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.mega-item::after {
+  display: none !important;
+}
+
+.mega-item:hover,
+.mega-item:focus-visible {
+  background: rgba(208, 165, 250, 0.13);
+  border-color: rgba(208, 165, 250, 0.45);
+  transform: translateY(-2px);
+}
+
+.mega-icon-wrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  background: rgba(18, 12, 28, 0.9);
+  border: 1px solid rgba(208, 165, 250, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d8a9ff;
+  flex-shrink: 0;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.mega-item:hover .mega-icon-wrap {
+  color: #140d20;
+  background: var(--lavender, #d0a5fa);
+  border-color: var(--lavender, #d0a5fa);
+  transform: scale(1.06) rotate(-4deg);
+}
+
+.col-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mega-item-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.mega-item-text strong {
+  font-family: var(--t2-narrow, sans-serif);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.mega-item-text small {
+  font-family: var(--t2-readable, sans-serif);
+  font-size: 0.76rem;
+  color: #b9acc8;
+  margin-top: 2px;
+}
+
+.mega-menu-footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(208, 165, 250, 0.14);
+  text-align: right;
+}
+
+.mega-view-all {
+  font-family: var(--t2-narrow, sans-serif);
+  font-size: 0.92rem !important;
+  color: #d8a9ff !important;
+  padding: 4px 6px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mega-view-all::after {
+  display: none !important;
+}
+
+.mega-view-all:hover {
+  color: #fff !important;
+}
+
+/* En móvil: integrar la cuadrícula de colecciones dentro del menú desplegable */
+@media (max-width: 760px) {
+  .nav-dropdown {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .mega-menu {
+    position: static;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    background: rgba(10, 7, 18, 0.55);
+    padding: 10px;
+    margin: 4px 0 8px;
+    box-shadow: none;
+  }
+  .mega-menu::before { display: none; }
+  .mega-menu-header, .mega-menu-footer { display: none; }
+  .mega-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  .mega-item {
+    padding: 8px !important;
+  }
+}
+
+/* 3. Animación Fluida Slide-Down para el Panel de Búsqueda (Lupa) */
+.search-panel {
+  display: block !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-18px);
+  transition: opacity 0.34s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.34s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.34s;
+}
+
+.search-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* 4. Tipografía urbana y legible para la Barra de Búsqueda */
+.search-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.search-form label {
+  font-family: 'Amatic SC', var(--t2-narrow, sans-serif) !important;
+  font-style: normal !important;
+  font-size: clamp(1.9rem, 2.7vw, 2.45rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.05;
+  color: #e2b8ff !important;
+  margin-bottom: 0 !important;
+  letter-spacing: 0.035em;
+  text-shadow: 0 0 14px rgba(196, 118, 255, 0.3);
+}
+
+.search-freestyle-tag {
+  font-family: 'Amatic SC', var(--t2-narrow, sans-serif);
+  font-style: normal;
+  font-size: clamp(1.55rem, 2.2vw, 1.95rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  color: #d8adff;
+  opacity: 0.95;
+  transform: none;
+  text-shadow: 0 0 12px rgba(196, 118, 255, 0.28);
+  white-space: nowrap;
+}
+
+.search-line input {
+  font-family: var(--t2-readable, sans-serif) !important;
+  font-style: normal !important;
+  font-size: 1.05rem !important;
+  background: rgba(34, 24, 50, 0.9) !important;
+  border: 1.5px solid rgba(192, 138, 246, 0.45) !important;
+  border-radius: 7px !important;
+  padding: 13px 16px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-line input::placeholder {
+  font-family: var(--t2-readable, sans-serif);
+  font-style: normal;
+  font-size: 1rem;
+  color: #bca3d4;
+  opacity: 0.85;
+}
+
+.search-line input:focus {
+  border-color: #dfafff !important;
+  box-shadow: 0 0 18px rgba(208, 165, 250, 0.25);
+  outline: none;
+}
+
+#search-status {
+  font-family: var(--t2-readable, sans-serif);
+  font-style: normal;
+  font-size: 0.98rem;
+  color: #d8c3ef;
+  margin-top: 9px;
+}
+
+#search-status:empty {
+  display: none;
+  margin: 0;
+}
+
+.search-line button {
+  font-family: var(--t2-narrow, sans-serif);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}

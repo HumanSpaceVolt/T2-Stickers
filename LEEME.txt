@@ -1,0 +1,20 @@
+T²-STICKERS — PROTOTIPO WEB V16.8
+
+Base heredada de V16.5:
+- Barra de búsqueda con encabezado y #StickToYourTruth en Amatic SC Bold.
+- Placeholder genérico por gustos e intereses y área inferior limpia.
+- Menú superior de Colecciones con comportamiento híbrido (Hover + Clic inteligente).
+- Carrito de pedidos con botón «+ Agregar más stickers a mi universo» y cierre global con tecla ESC.
+
+Novedades de la V16.6:
+- Corregido el tamaño visual del número de la insignia (badge) en el icono del carrito: ampliado y proporcionado (font-size 0.88rem, min-width/height 22px) para que el número «16» se lea con total claridad y proporciones correctas.
+
+
+Novedades de la V16.8:
+- Ajustado el indicador de foco del botón del carrito para que sea circular en lugar de un marco cuadrado al cerrar el panel con Escape.
+- Se conserva un indicador visible para navegación con teclado; no se elimina la accesibilidad del foco.
+- Se mantienen las funciones y el diseño restante de la V16.6.
+
+
+V16.8 — Corrección del foco al cerrar Mi Pedido con Escape.
+Al cerrar el carrito con Escape, se difumina el foco activo para que el botón de la bolsa no quede resaltado. Se conserva el indicador de foco para navegación normal con teclado.

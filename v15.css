@@ -1,0 +1,32 @@
+/* V15.1 — Restauración de la distribución editorial aprobada en Colecciones.
+   Únicamente se modifica la posición relativa del texto; el copy permanece igual. */
+#colecciones > .section-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  column-gap: clamp(28px, 5vw, 85px);
+  row-gap: 12px;
+}
+#colecciones > .section-heading > div {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+#colecciones > .section-heading > p {
+  flex: 0 1 380px;
+  max-width: 380px;
+  margin: 0 0 4px;
+}
+@media (max-width: 760px) {
+  #colecciones > .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  #colecciones > .section-heading > p {
+    flex: none;
+    max-width: 100%;
+    margin: 0;
+  }
+}
