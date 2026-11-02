@@ -1,0 +1,70 @@
+/* V11 · Portada aprobada por Human: ilustración sin reinterpretación. */
+.hero-v11{
+  position:relative;
+  isolation:isolate;
+  height:56.28vw;
+  min-height:660px;
+  max-height:none;
+  background:#0b0913;
+  overflow:hidden;
+}
+.hero-v11::before,.hero-v11 .hero-tear,.hero-v11 .hero-star{display:none!important;}
+.hero-v11 .hero-v11-desktop-art{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background-image:url('assets/hero-aprobado-v11.webp');
+  background-position:center center;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  pointer-events:none;
+}
+.hero-v11 .hero-v11-mobile-art{display:none;}
+.hero-v11 .hero-content.shell{position:absolute;inset:0;padding:0;width:100%;max-width:none;min-height:0;display:block;z-index:1;pointer-events:none;}
+/* El texto se conserva en el DOM para lectores de pantalla y SEO.
+   En escritorio lo muestra la imagen aprobada, sin duplicar las letras. */
+.hero-v11 .hero-copy{position:absolute!important;width:1px!important;height:1px!important;
+  padding:0!important;margin:0!important;border:0!important;clip-path:inset(50%)!important;
+  white-space:nowrap!important;overflow:hidden!important;transform:none!important;}
+.hero-v11 .hero-copy .hero-actions{display:none!important;}
+.hero-v11-hotspots{position:absolute;inset:0;z-index:4;pointer-events:none;}
+.hero-v11-hotspot{position:absolute;display:block;pointer-events:auto;border-radius:7px;background:transparent;}
+.hero-v11-hotspot.explore{left:4.55%;top:77.9%;width:18.3%;height:6.75%;}
+.hero-v11-hotspot.catalog{left:23.9%;top:77.9%;width:14.15%;height:6.75%;}
+.hero-v11-hotspot:hover{box-shadow:0 0 0 2px rgba(227,169,255,.68);}
+.hero-v11-hotspot:focus-visible{outline:3px solid #fff;outline-offset:3px;background:#110c1a33;}
+/* Menú verdadero, completo: tapa por completo el encabezado impreso en el arte.
+   Conserva transparencia dinámica al desplazarse, como en la V10. */
+.site-header:not(.is-scrolled){background:#0a0810!important;}
+.site-header.is-scrolled{background:rgba(18,12,28,.77)!important;}
+.site-header.is-scrolled:hover,.site-header.is-scrolled:focus-within,
+.site-header.menu-is-open{background:rgba(14,9,24,.98)!important;}
+.site-header .site-nav .nav-orders{display:inline-flex!important;}
+@media(max-width:760px){
+ .hero-v11{height:auto;min-height:0;background:#0c0915;}
+ .hero-v11 .hero-v11-desktop-art{display:none;}
+ .hero-v11 .hero-v11-mobile-art{
+   position:absolute;inset:auto 0 0;width:100%;height:min(78vw,540px);
+   display:block;z-index:0;pointer-events:none;
+   background:url('assets/hero-aprobado-v11-movil.webp') center bottom/contain no-repeat;
+ }
+ .hero-v11 .hero-content.shell{
+   position:relative;inset:auto;display:block;pointer-events:auto;
+   width:min(calc(100% - 36px),600px);max-width:600px;
+   padding-top:calc(var(--v4-header-start) + 48px);
+   padding-bottom:min(80vw,555px);margin:0 auto;
+ }
+ .hero-v11 .hero-copy{
+   position:relative!important;clip-path:none!important;white-space:normal!important;
+   overflow:visible!important;width:100%!important;height:auto!important;
+   padding:0!important;margin:0!important;
+ }
+ .hero-v11 .hero-copy .hero-actions{display:flex!important;}
+ .hero-v11 .hero-v11-hotspots{display:none;}
+ .hero-v11 .hero-v11-mobile-art{height:min(78vw,540px)}
+ .site-header .site-nav .nav-orders{display:block!important;}
+}
+@media(max-width:430px){
+ .hero-v11 .hero-content.shell{padding-top:calc(var(--v4-header-start) + 35px);padding-bottom:77vw;}
+ .hero-v11 .hero-v11-mobile-art{height:77vw;}
+}

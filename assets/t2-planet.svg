@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="550" viewBox="0 0 68 55" aria-label="Planeta opaco con anillo pasando por detrás">
+  <defs>
+    <linearGradient id="planetRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb8ff"/>
+      <stop offset="100%" stop-color="#a35af0"/>
+    </linearGradient>
+  </defs>
+  <!-- Anillo lejano, dibujado por detrás del disco -->
+  <ellipse cx="34" cy="27" rx="30" ry="9" transform="rotate(-24 34 27)" fill="none" stroke="#b781ec" stroke-width="2.5"/>
+  <!-- Planeta completamente opaco: tapa físicamente el anillo trasero -->
+  <circle cx="35" cy="26" r="16.5" fill="#120f1b" stroke="url(#planetRim)" stroke-width="2.8"/>
+  <!-- Grabado interior, no es transparente -->
+  <circle cx="35" cy="26" r="11" fill="none" stroke="#b58be3" stroke-width="1.25" opacity=".70"/>
+  <!-- Solo el medio anillo que cruza POR DELANTE del hemisferio inferior -->
+  <path d="M 61.406 14.798 A 30 9 -24 0 1 6.594 39.202" fill="none" stroke="#eca5ff" stroke-width="3.4" stroke-linecap="round"/>
+</svg>

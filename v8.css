@@ -1,0 +1,97 @@
+/* T²-STICKERS · V8 — tipografía condensada global, sin alterar el HERO aprobado. */
+/* Se cargan familias de Google Fonts cuando hay Internet.
+   Si no hay conexión, Arial Narrow / Liberation Sans Narrow mantienen el diseño. */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap');
+:root{
+ --t2-narrow:'Barlow Condensed','Arial Narrow','Nimbus Sans Narrow','Liberation Sans Narrow',Arial,sans-serif;
+ --t2-readable:'Barlow Semi Condensed','Arial Narrow','Liberation Sans Narrow',Arial,sans-serif;
+}
+/* Texto general, tarjetas, búsqueda y elementos comerciales: más esbelto y compacto. */
+body,button,input,.search-panel,.search-form,.search-line button,.quick-menu,
+.collection-details p,.product-card p,.contact-inner p:not(.eyebrow),
+.section-heading>p,.footer-inner{
+ font-family:var(--t2-readable);
+}
+body{font-size:1.04rem;letter-spacing:.005em}
+/* Titulares y navegación: familia realmente condensada (no se aplastan letras con CSS). */
+.site-header .brand,
+.site-header .site-nav a,
+.quick-menu a,.brand-name,
+.hero-v7 .button,
+.section-heading h2,.manifesto-section h2,.contact-inner h2,
+.collection-details h3,.product-card h3,
+.eyebrow,.hero-eyebrow,.collection-num,.product-card span,
+.manifesto-end,.contact-decoration,.site-footer,
+.search-form label,.search-line input,.search-line button{
+ font-family:var(--t2-narrow);
+}
+/* Logo: '2' de superíndice estrecho, claramente reconocible. */
+.site-header .brand{font-size:clamp(1.52rem,2.0vw,2.08rem);font-weight:700;letter-spacing:.005em;gap:10px}
+.site-header .brand-name{display:inline-block;line-height:1.02;white-space:nowrap}
+.site-header .brand-name sup.brand-exponent{
+ position:relative;display:inline-block;top:-.53em;
+ vertical-align:baseline;line-height:0;
+ font-family:var(--t2-narrow);font-size:.46em;font-weight:600;
+ margin-left:.012em;margin-right:.025em;letter-spacing:0;
+}
+/* Menú V2/V7 intacto en comportamiento, solo cambia la proporción tipográfica. */
+.site-header .site-nav{gap:clamp(14px,2.35vw,36px);margin-left:clamp(13px,2.0vw,36px)}
+.site-header .site-nav a{font-size:1.26rem;font-weight:600;letter-spacing:.018em}
+.site-header .site-nav a.nav-orders{display:inline-flex;align-items:center;white-space:nowrap;color:#ead9fc}
+.site-header .site-nav a.nav-orders:hover,.site-header .site-nav a.nav-orders:focus-visible{color:#fff}
+.quick-menu a{font-size:1.12rem;font-weight:500}
+/* Manifiesto: conservar la caligrafía editorial y proporción angosta del diseño aprobado.
+   Ya era una composición serif estrecha, por lo que no se sustituye por una fuente genérica. */
+.hero-v7 h1{font-family:'Bodoni MT',Didot,'Times New Roman',Georgia,serif;letter-spacing:-.059em}
+.hero-v7 .hero-subtitle{font-family:var(--t2-readable);font-size:clamp(1.12rem,1.46vw,1.5rem);font-weight:400;line-height:1.43}
+.hero-v7 .hero-eyebrow{font-family:var(--t2-narrow);font-weight:700;letter-spacing:.30em;font-size:clamp(.83rem,1.0vw,1rem)}
+.hero-v7 .button{font-size:clamp(1.02rem,1.2vw,1.24rem);letter-spacing:.008em;font-weight:600}
+/* Fuentes del catálogo y demás secciones: estrechas, nunca estiradas horizontalmente. */
+.section-heading h2,.contact-inner h2{font-size:clamp(2.5rem,4.35vw,4.45rem);font-weight:700;letter-spacing:-.008em;line-height:1.02}
+.manifesto-section h2{font-size:clamp(3rem,6.0vw,6.2rem);font-weight:600;letter-spacing:.0em}
+.collection-details h3{font-size:1.95rem;font-weight:700;letter-spacing:.012em;line-height:1.03}
+.product-card h3{font-size:1.42rem;font-weight:600;line-height:1.16}
+.collection-details p{font-size:.94rem}
+.product-card p{font-size:.92rem}
+.product-card span,.collection-num{font-size:.83rem;letter-spacing:.09em}
+.eyebrow{font-size:.94rem;font-weight:700;letter-spacing:.14em}
+.section-heading>p{font-size:1.04rem;line-height:1.4}
+.manifesto-section>p:not(.eyebrow){font-family:var(--t2-readable);font-size:clamp(1.25rem,2.1vw,1.68rem);line-height:1.4}
+.contact-inner>div p:not(.eyebrow){font-size:1.08rem}
+.manifesto-end{font-size:.96rem;letter-spacing:.1em}
+.site-footer{font-size:.98rem}
+.contact-decoration{font-weight:800}
+/* Pantallas medianas: cuatro accesos + logo y herramientas sin amontonarse. */
+@media(max-width:1120px) and (min-width:761px){
+ .site-header .site-nav{margin-left:8px;gap:clamp(11px,1.65vw,20px)}
+ .site-header .site-nav a{font-size:1.08rem}
+ .site-header .brand{font-size:1.53rem}
+ .header-tools{gap:7px}
+}
+@media(max-width:900px) and (min-width:761px){
+ .site-header .header-inner{gap:10px}
+ .brand-planet{width:40px;height:38px}
+ .site-header .brand{font-size:1.42rem;gap:6px}
+ .site-header .site-nav a{font-size:1.02rem}
+ .site-header .site-nav{gap:11px;margin-left:4px}
+ .tool-button{width:25px}
+}
+@media(max-width:760px){
+ .site-header .brand{font-size:1.72rem}
+ .site-header .site-nav a{font-size:1.35rem;letter-spacing:.01em}
+ .site-header .site-nav .nav-orders{display:block;padding:12px 8px}
+ .hero-v7 h1{font-size:clamp(2.05rem,7.6vw,4rem)}
+ .hero-v7 .hero-subtitle{font-size:1.1rem}
+ .section-heading h2,.contact-inner h2{font-size:clamp(2.45rem,7.8vw,3.8rem)}
+ .collection-details h3{font-size:1.55rem}
+ .product-card h3{font-size:1.23rem}
+ .hero-v7 .button{font-size:1.05rem}
+}
+@media(max-width:430px){
+ .site-header .brand{font-size:1.43rem}
+ .hero-v7 h1{font-size:clamp(1.98rem,7.75vw,2.5rem)}
+ .hero-v7 .hero-subtitle{font-size:1.04rem}
+ .hero-v7 .hero-eyebrow{font-size:.76rem}
+ .hero-v7 .button{font-size:.98rem}
+ .collection-details h3{font-size:1.36rem}
+}

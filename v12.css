@@ -1,0 +1,84 @@
+/* T²-Stickers V12 · cambios aprobados exclusivamente: ², botones reales y portada 90/10. */
+/* Logotipo: la cifra es superíndice independiente anclado en la esquina superior de la T. */
+.site-header .brand-name .t2-mark{position:relative;display:inline-block;line-height:1;vertical-align:baseline;margin-right:.31em;}
+.site-header .brand-name .t2-mark sup.brand-exponent{
+  position:absolute!important;display:block!important;
+  top:-.16em!important;left:calc(100% - .035em)!important;
+  font-family:var(--t2-narrow);font-size:.48em!important;font-weight:700!important;
+  line-height:1!important;vertical-align:baseline!important;
+  margin:0!important;letter-spacing:0!important;
+}
+/* Portada: objetivo 90% de la pantalla; cover mantiene proporciones (recorta sobre todo
+   la parte superior, cubierta por el menú real, no deforma ni recorta pies de personajes). */
+@media(min-width:761px){
+  .hero-v12{height:90vh;height:90svh;min-height:600px;max-height:none;}
+  .hero-v12 .hero-v11-desktop-art{
+    background-image:url('assets/hero-v12-sin-botones.webp');
+    background-size:cover;background-position:center bottom;
+  }
+  .hero-v12 .hero-copy{
+    position:absolute!important;inset:0!important;
+    width:100%!important;height:100%!important;max-width:none!important;
+    padding:0!important;margin:0!important;
+    clip-path:none!important;white-space:normal!important;overflow:visible!important;
+    transform:none!important;pointer-events:none!important;
+  }
+  .hero-v12 .hero-copy > :not(.hero-actions){
+    position:absolute!important;width:1px!important;height:1px!important;
+    padding:0!important;margin:-1px!important;border:0!important;
+    clip-path:inset(50%)!important;white-space:nowrap!important;overflow:hidden!important;
+  }
+  .hero-v12 .hero-copy .hero-actions{
+    position:absolute!important;display:flex!important;flex-wrap:nowrap!important;
+    left:4.56vw;bottom:6.55vw;gap:.83vw;
+    width:auto;z-index:5;pointer-events:auto;
+    align-items:flex-start;
+  }
+  .hero-v12 .hero-actions .button{
+    position:relative;box-sizing:border-box;display:inline-flex;align-items:center;
+    justify-content:center;min-width:0!important;height:3.98vw;min-height:0;
+    max-height:none;margin:0;padding:0 .75vw;
+    font-family:Georgia,'Times New Roman',serif!important;
+    font-size:clamp(13px,1.35vw,24px)!important;font-weight:700!important;
+    line-height:1.1;letter-spacing:-.025em;
+    text-decoration:none;white-space:nowrap;border-radius:6px;
+    transition:transform .16s ease,background .16s ease,box-shadow .16s ease;
+  }
+  .hero-v12 .hero-actions .button-primary{
+    width:18.3vw;color:#1b0e25!important;
+    background:linear-gradient(125deg,#ba78e6 0%,#d29af4 40%,#c48aec 77%,#a96ed7 100%);
+    border:0;box-shadow:0 0 18px rgba(195,110,231,.23),inset 0 0 0 1px #daaaf6;
+    justify-content:space-around;gap:0;
+    clip-path:polygon(1% 0%,13% 2%,30% 0%,46% 2%,62% 1%,79% 2%,100% 1%,99% 20%,100% 47%,99% 76%,100% 96%,76% 97%,57% 99%,36% 97%,21% 99%,1% 98%,0% 72%,1% 47%,0% 20%);
+  }
+  .hero-v12 .hero-actions .button-primary::after{display:none;}
+  .hero-v12 .hero-actions .hero-primary-drips{
+    position:absolute;display:block;left:4.5vw;top:calc(3.98vw - 1px);
+    width:5px;height:13px;border-radius:0 0 5px 5px;
+    background:#ba7ada;pointer-events:none;
+  }
+  .hero-v12 .hero-primary-drips::before,.hero-v12 .hero-primary-drips::after{
+    content:'';position:absolute;top:0;display:block;width:5px;
+    border-radius:0 0 5px 5px;background:#ba7ada;
+  }
+  .hero-v12 .hero-primary-drips::before{left:11px;height:31px;}
+  .hero-v12 .hero-primary-drips::after{left:23px;height:20px;}
+
+  .hero-v12 .hero-actions .button-outline{
+    width:13.95vw;background:rgba(11,8,18,.96)!important;color:#fff!important;
+    border:1.5px solid #c39acf!important;box-shadow:inset 0 0 8px #0006;
+  }
+  .hero-v12 .hero-actions .button:hover{transform:translateY(-2px);}
+  .hero-v12 .hero-actions .button-primary:hover{background:#dfabff;filter:brightness(1.055);}
+  .hero-v12 .hero-actions .button-outline:hover{background:#2a163b!important;box-shadow:0 0 15px #ac6de03d;}
+  .hero-v12 .hero-actions .button:focus-visible{outline:3px solid white;outline-offset:3px;}
+  /* El primer vistazo enseña un poco del arranque de Colecciones. */
+  .hero-v12 + #colecciones{padding-top:clamp(25px,3.6vw,53px);}
+}
+/* En pantallas muy estrechas el HERO usa su composición móvil, sin botones impresos,
+   con los mismos enlaces reales y sin esconder el texto. */
+@media(max-width:760px){
+  .hero-v12 .hero-copy .hero-actions{display:flex!important;}
+  .hero-v12 .hero-copy .hero-actions .button{pointer-events:auto;}
+  .hero-v12 .hero-actions .hero-primary-drips{display:none;}
+}

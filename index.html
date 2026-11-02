@@ -1,27 +1,251 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="T²-Stickers: no vendemos solo stickers, vendemos identidad. Explora colecciones de arte original, desde SK8 y Místico hasta Gatonautas y Calaquitas.">
+  <meta name="theme-color" content="#121019">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
   <title>T²-Stickers | Vendemos identidad</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="v4.css">
+  <link rel="stylesheet" href="v6.css">
+  <link rel="stylesheet" href="v7.css">
+  <link rel="stylesheet" href="v8.css">
+  <link rel="stylesheet" href="v9.css">
+  <link rel="stylesheet" href="v10.css">
+  <link rel="stylesheet" href="v11.css">
+  <link rel="stylesheet" href="v12.css">
+  <link rel="stylesheet" href="v13.css">
+  <link rel="stylesheet" href="v14.css">
+  <link rel="stylesheet" href="v15.css">
+  <link rel="stylesheet" href="v16.css">
 </head>
-<body>
-
-  <header>
-    <h1>T²-Stickers</h1>
+<body data-page="home">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header" id="site-header">
+    <div class="header-inner shell">
+      <a class="brand" href="#inicio" aria-label="T²-Stickers, inicio">
+        <img src="assets/t2-planet.svg" alt="" class="brand-planet" width="58" height="48">
+        <span class="brand-name"><span class="t2-mark">T<sup class="brand-exponent">2</sup></span>-Stickers</span>
+      </a>
+      <nav id="main-nav" class="site-nav" aria-label="Navegación principal">
+        <div class="nav-dropdown" id="collections-dropdown">
+          <a href="#colecciones" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Colecciones <span class="nav-chevron" aria-hidden="true">⌄</span></a>
+          <div class="mega-menu" role="menu" aria-label="Submenú de colecciones">
+            <div class="mega-menu-header">Explora nuestros universos</div>
+            <div class="mega-grid">
+              <a href="colecciones/sk8.html" class="mega-item" role="menuitem">
+                <span class="mega-icon-wrap"><svg class="col-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11c2 1.5 16 1.5 18 0"/><circle cx="7.5" cy="14.5" r="1.8"/><circle cx="16.5" cy="14.5" r="1.8"/></svg></span>
+                <span class="mega-item-text"><strong>SK8</strong><small>Urbano · Skate</small></span>
+              </a>
+              <a href="colecciones/mistico.html" class="mega-item" role="menuitem">
+                <span class="mega-icon-wrap"><svg class="col-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4a7.5 7.5 0 1 0 5.5 12.5A6.5 6.5 0 0 1 14.5 4Z"/><path d="M18 5v3m-1.5-1.5h3"/></svg></span>
+                <span class="mega-item-text"><strong>Místico</strong><small>Enigma · Magia</small></span>
+              </a>
+              <a href="colecciones/calaquitas.html" class="mega-item" role="menuitem">
+                <span class="mega-icon-wrap"><svg class="col-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a7 7 0 0 0-7 7c0 2.6 1.4 4.8 3.5 6v3h7v-3c2.1-1.2 3.5-3.4 3.5-6a7 7 0 0 0-7-7Z"/><circle cx="9.5" cy="11" r="1.4"/><circle cx="14.5" cy="11" r="1.4"/><path d="M10.5 17v3m3-3v3"/></svg></span>
+                <span class="mega-item-text"><strong>Calaquitas</strong><small>Color · Memoria</small></span>
+              </a>
+              <a href="colecciones/gatonautas.html" class="mega-item" role="menuitem">
+                <span class="mega-icon-wrap"><svg class="col-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M7.5 10.5V7l3 2h3l3-2v3.5a4.5 4.5 0 0 1-9 0Z"/><circle cx="10.2" cy="11.5" r="0.8" fill="currentColor"/><circle cx="13.8" cy="11.5" r="0.8" fill="currentColor"/></svg></span>
+                <span class="mega-item-text"><strong>Gatonautas</strong><small>Kawaii · Cosmos</small></span>
+              </a>
+            </div>
+            <div class="mega-menu-footer">
+              <a href="#colecciones" class="mega-view-all">Ver todas las colecciones <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+        </div>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Sobre nosotros</a>
+        <a href="#contacto" class="nav-orders">¡Contáctanos!</a>
+      </nav>
+      <div class="header-tools">
+        <button class="tool-button search-toggle" type="button" aria-label="Buscar en el catálogo" title="Buscar stickers">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.6"/><path d="m16 16 5 5"/></svg>
+        </button>
+        <button class="tool-button cart-toggle" id="cart-toggle-btn" type="button" aria-label="Abrir mi pedido" title="Mi pedido">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          <span class="cart-badge" id="cart-badge" hidden>0</span>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="quick-menu" id="quick-menu" aria-label="Accesos rápidos" hidden>
+      <a href="#inicio">Inicio</a>
+      <a href="#colecciones">Colecciones</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#nosotros">Sobre nosotros</a>
+      <a href="#contacto">¡Contáctanos!</a>
+    </nav>
   </header>
+  <div class="search-panel" id="search-panel" aria-hidden="true">
+    <form class="search-form" role="search">
+      <div class="search-header-row"><label for="site-search">¿QUÉ TE MUEVE? CUÉNTANOS TUS GUSTOS</label><span class="search-freestyle-tag">#StickToYourTruth</span></div>
+      <div class="search-line"><input id="site-search" type="search" placeholder="Prueba con: perros, gatos, espacio, dinosaurios, plantas, música, magia..." autocomplete="off"><button type="submit">Buscar</button><button type="button" class="search-close" aria-label="Cerrar búsqueda">×</button></div>
+      <p id="search-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
 
-  <main>
-    <section>
-      <h2>No vendemos solo stickers, vendemos identidad.</h2>
-      <p>Bienvenido a nuestro espacio creativo.</p>
+  <main id="contenido">
+    <section id="inicio" class="hero hero-v4 hero-v6 hero-v7 hero-v11 hero-v12 hero-v13" aria-labelledby="hero-title">
+      <!-- Ilustración aprobada, con únicamente los botones impresos eliminados para usar controles reales. -->
+      <div class="hero-v13-desk">
+        <div class="hero-v11-desktop-art" aria-hidden="true"></div>
+        <!-- Una pieza original completa, como capa real y sin modificar el collage aprobado. -->
+        <!-- Texto accesible; los enlaces del HERO son HTML reales en escritorio y móvil. -->
+        <div class="hero-content shell">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">T²-STICKERS <span></span></p>
+          <p class="hashtag">#StickToYourTruth</p>
+          <h1 id="hero-title"><span>NO VENDEMOS SOLO</span><span>STICKERS.</span><strong>VENDEMOS</strong><strong>IDENTIDAD.</strong></h1>
+          <p class="hero-subtitle">Diseños para expresar lo que eres,<br class="desktop-only"> lo que amas y aquello en lo que crees.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#colecciones">Explorar colecciones <span aria-hidden="true">→</span><span class="hero-primary-drips" aria-hidden="true"></span></a>
+            <a class="button button-outline" href="#catalogo">Ver catálogo</a>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="hero-v11-mobile-art" aria-hidden="true"></div>
+    </section>
+
+    <div class="universe-bridge" aria-label="Descubre las colecciones">
+      <!-- Originales completos: no se agregan parches ni personajes duplicados sobre el collage. -->
+      <a class="universe-bridge-link" href="#colecciones" aria-label="Elige tu universo, ir a las colecciones">
+        <strong>ELIGE TU UNIVERSO</strong>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v17m-7-7 7 7 7-7"/></svg>
+      </a>
+    </div>
+
+    <section id="colecciones" class="section shell" aria-labelledby="colecciones-title">
+      <div class="section-heading"><div><p class="eyebrow">COLECCIONES</p><h2 id="colecciones-title">Descubre tu estilo<span class="dot">.</span></h2></div><p>Diferentes formas de expresarte. Encuentra la que conecta con tu identidad.</p></div>
+      <div class="collection-grid">
+        <a class="collection-card collection-sk8" href="colecciones/sk8.html"><div class="collection-art"><img src="assets/alien-sk8.webp" alt="Alien en patineta bajo un ovni" loading="lazy" width="1200" height="1200"></div><div class="collection-details"><div><span class="collection-num">URBANO</span><h3>SK8</h3><p>Actitud, color y cultura callejera.</p></div><span class="card-arrow" aria-hidden="true">↗</span></div></a>
+        <a class="collection-card collection-mistico" href="colecciones/mistico.html"><div class="collection-art"><img src="assets/gato-mistico.webp" alt="Gato negro con símbolos místicos amarillos" loading="lazy" width="1200" height="1200"></div><div class="collection-details"><div><span class="collection-num">ENIGMA</span><h3>Místico</h3><p>Símbolos, magia y mundos interiores.</p></div><span class="card-arrow" aria-hidden="true">↗</span></div></a>
+        <a class="collection-card collection-calaquitas" href="colecciones/calaquitas.html"><div class="collection-art"><img src="assets/calavera-vive.webp" alt="Calavera floral de colores con la palabra VIVE" loading="lazy" width="1200" height="1200"></div><div class="collection-details"><div><span class="collection-num">COLOR</span><h3>Calaquitas</h3><p>Arte, memoria y celebración.</p></div><span class="card-arrow" aria-hidden="true">↗</span></div></a>
+        <a class="collection-card collection-kawaii" href="colecciones/gatonautas.html"><div class="collection-art"><img src="assets/gatonauta-telescopio.webp" alt="Gatito astronauta con telescopio" loading="lazy" width="1200" height="1200"></div><div class="collection-details"><div><span class="collection-num">KAWAII</span><h3>Gatonautas</h3><p>Curiosidad, ternura y pequeñas aventuras.</p></div><span class="card-arrow" aria-hidden="true">↗</span></div></a>
+      </div>
+    </section>
+
+    <section id="catalogo" class="section catalog-section" aria-labelledby="catalogo-title"><div class="shell"><div class="section-heading"><div><p class="eyebrow">CATÁLOGO</p><h2 id="catalogo-title">Stickers destacados<span class="dot">.</span></h2></div><p>Una primera selección de nuestro universo creativo. Pronto agregaremos presentaciones, acabados y precios.</p></div><div class="product-grid">
+      <article class="product-card"><a class="featured-image-link" href="colecciones/sk8.html" aria-label="Ver colección Sk8"><img src="assets/patineta-sk8.webp" alt="Patineta SK8 envuelta en llamas" loading="lazy" width="1200" height="1200"></a><div><span>SK8</span><h3>Patineta en llamas</h3><div class="product-card-actions">
+          <div class="product-variants">
+            <select class="select-size" aria-label="Tamaño">
+              <option value="10 cm">10 cm</option>
+              <option value="6-7 cm">6-7 cm</option>
+            </select>
+            <select class="select-finish" aria-label="Acabado">
+              <option value="Normal">Normal</option>
+              <option value="Holográfico">Holográfico</option>
+            </select>
+          </div>
+          <button type="button" class="btn-add-cart">Agregar al pedido</button>
+        </div></div></article>
+      <article class="product-card"><a class="featured-image-link" href="colecciones/mistico.html" aria-label="Ver colección Mistico"><img src="assets/gato-vela.webp" alt="Gato místico junto a una vela multicolor" loading="lazy" width="1200" height="1200"></a><div><span>Místico</span><h3>Velita mística</h3><div class="product-card-actions">
+          <div class="product-variants">
+            <select class="select-size" aria-label="Tamaño">
+              <option value="10 cm">10 cm</option>
+              <option value="6-7 cm">6-7 cm</option>
+            </select>
+            <select class="select-finish" aria-label="Acabado">
+              <option value="Normal">Normal</option>
+              <option value="Holográfico">Holográfico</option>
+            </select>
+          </div>
+          <button type="button" class="btn-add-cart">Agregar al pedido</button>
+        </div></div></article>
+      <article class="product-card"><a class="featured-image-link" href="colecciones/gatonautas.html" aria-label="Ver colección Gatonautas"><img src="assets/gatonauta-luna.webp" alt="Gatito astronauta abrazando una luna de queso" loading="lazy" width="1200" height="1200"></a><div><span>Gatonautas</span><h3>Luna de queso</h3><div class="product-card-actions">
+          <div class="product-variants">
+            <select class="select-size" aria-label="Tamaño">
+              <option value="10 cm">10 cm</option>
+              <option value="6-7 cm">6-7 cm</option>
+            </select>
+            <select class="select-finish" aria-label="Acabado">
+              <option value="Normal">Normal</option>
+              <option value="Holográfico">Holográfico</option>
+            </select>
+          </div>
+          <button type="button" class="btn-add-cart">Agregar al pedido</button>
+        </div></div></article>
+      <article class="product-card"><a class="featured-image-link" href="colecciones/calaquitas.html" aria-label="Ver colección Calaquitas"><img src="assets/calaca-astronauta.webp" alt="Calaca astronauta con planetas y estrellas" loading="lazy" width="1200" height="1200"></a><div><span>Calaquitas</span><h3>Calaca astronauta</h3><div class="product-card-actions">
+          <div class="product-variants">
+            <select class="select-size" aria-label="Tamaño">
+              <option value="10 cm">10 cm</option>
+              <option value="6-7 cm">6-7 cm</option>
+            </select>
+            <select class="select-finish" aria-label="Acabado">
+              <option value="Normal">Normal</option>
+              <option value="Holográfico">Holográfico</option>
+            </select>
+          </div>
+          <button type="button" class="btn-add-cart">Agregar al pedido</button>
+        </div></div></article>
+    </div></div></section>
+
+    <section id="nosotros" class="section manifesto-section shell" aria-labelledby="nosotros-title"><p class="eyebrow">NUESTRA FILOSOFÍA</p><h2 id="nosotros-title">#StickToYourTruth</h2><p>Un sticker puede expresar una idea, una emoción, una postura o una parte de tu universo. En T² creemos que el arte también habla por ti.</p><span class="manifesto-end">NO VENDEMOS SOLO STICKERS. VENDEMOS IDENTIDAD.</span></section>
+    <section id="contacto" class="section contact-section" aria-labelledby="contacto-title">
+      <div class="shell contact-inner">
+        <div>
+          <p class="eyebrow">CONTACTO DIRECTO</p>
+          <h2 id="contacto-title">¿Tienes alguna duda o una solicitud especial?</h2>
+          <p>Escríbenos directamente por WhatsApp para pedidos personalizados, dudas de mayoreo o entregas locales. Estamos a un mensaje de distancia para darle vida a tu idea.</p>
+          <div style="margin-top: 24px;">
+            <a class="button button-primary" href="https://wa.me/5216860000000?text=%C2%A1Hola%20T%C2%B2-Stickers!%20%F0%9F%AA%90%20Tengo%20una%20duda%20%2F%20solicitud%20especial%3A" target="_blank" rel="noopener">Escríbenos por WhatsApp <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <span class="contact-decoration" aria-hidden="true">T²</span>
+      </div>
     </section>
   </main>
+  <footer class="site-footer"><div class="shell footer-inner"><span>T²-Stickers</span><span>#StickToYourTruth</span><a href="#inicio">Volver arriba ↑</a></div></footer>
+  <script src="catalogo-data.js" defer></script>
+  <script src="script.js" defer></script>
 
-  <footer>
-    <p>T²-Stickers | #StickToYourTruth</p>
-  </footer>
+  <!-- Panel Lateral: Mi Pedido -->
+  <div class="cart-backdrop" id="cart-backdrop">
+    <aside class="cart-drawer" aria-label="Resumen de pedido">
+      <div class="cart-header">
+        <h2>Mi Pedido</h2>
+        <button class="cart-close" id="cart-close-btn" type="button" aria-label="Cerrar pedido">×</button>
+      </div>
+      <div class="cart-body" id="cart-items-container"></div>
+      <div class="cart-footer">
+        <div class="cart-subtotal-row">
+          <span class="cart-subtotal-label">Subtotal estimado</span>
+          <span class="cart-subtotal-amount" id="cart-subtotal-val">$0 MXN</span>
+        </div>
+        <p class="cart-disclaimer">Pago contra entrega. Disponibilidad y entrega sujetas a confirmación.</p>
+        <button class="button button-primary" id="cart-checkout-btn" type="button" style="width: 100%;">Generar ticket de pedido →</button>
+        <button class="cart-keep-exploring" id="cart-keep-exploring-btn" type="button">+ Agregar más stickers a mi universo <span>(ESC para volver)</span></button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Modal del Ticket Digital -->
+  <div class="ticket-modal" id="ticket-modal" hidden>
+    <div class="ticket-paper">
+      <div class="ticket-header">
+        <div class="ticket-brand">T²-STICKERS</div>
+        <div class="ticket-folio">FOLIO: <span id="ticket-folio-val">T2-0000</span></div>
+      </div>
+      <div class="ticket-items" id="ticket-items-list"></div>
+      <div class="ticket-total-row">
+        <span>Total estimado:</span>
+        <span id="ticket-total-val">$0 MXN</span>
+      </div>
+      <p class="ticket-notice">Al enviar el ticket por WhatsApp coordinaremos la entrega y el pago contra entrega.</p>
+      <div style="display: flex; gap: 10px;">
+        <a class="button button-primary" id="ticket-send-wa" href="#" target="_blank" style="flex: 1; text-align: center;">Enviar a WhatsApp →</a>
+        <button class="button button-outline" id="ticket-close-btn" type="button">Volver</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="cart.js" defer></script>
 
 </body>
 </html>

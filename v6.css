@@ -1,0 +1,64 @@
+/* V6 — Fidelidad al HERO aprobado. Enfoque: texto y collage forman una escena,
+   no dos tarjetas. Las capas artísticas provienen del diseño original aprobado. */
+.hero-v6{min-height:max(790px,56.28vw);background:#100c19}
+.hero-v6 .hero-collage{inset:0;background-image:url('assets/hero-collage-v6.webp');background-position:center center;background-size:100% 100%;}
+.hero-v6 .hero-night{inset:0;filter:none;background:linear-gradient(90deg,rgba(12,9,20,.45) 0%,rgba(12,9,20,.21) 21%,transparent 39%);}
+.hero-v6 .hero-grain{background:radial-gradient(ellipse at 80% 46%,#302044 0,#100c19 70%,#0e0b16 95%)}
+.hero-v6 .hero-grain::before{opacity:.18;mask-image:linear-gradient(90deg,#000 0%,#000 24%,transparent 48%)}
+.hero-v6 .hero-copy::before{content:none}
+/* The sentence stays in the quiet left area like the original approved poster. */
+.hero-v6 .hero-content.shell{width:calc(100% - clamp(44px,7vw,132px));max-width:1600px;padding-top:calc(var(--v4-header-start) + 50px);padding-bottom:78px}
+.hero-v6 .hero-copy{width:40%;max-width:640px;min-width:0;align-self:center;transform:translateY(0);}
+.hero-v6 .hero-eyebrow{font-size:clamp(.69rem,.85vw,.9rem);letter-spacing:.28em;margin-bottom:14px;white-space:nowrap;}
+.hero-v6 .hero-eyebrow span{width:clamp(60px,8vw,140px)}
+.hero-v6 .hashtag{font-size:clamp(1.85rem,2.8vw,3.35rem);margin-bottom:16px}
+.hero-v6 h1{font-size:clamp(2.7rem,3.55vw,4.45rem);line-height:1.01;letter-spacing:-.053em;margin-bottom:16px;text-shadow:0 2px 14px rgba(4,3,9,.8)}
+.hero-v6 h1 span,.hero-v6 h1 strong{white-space:nowrap}
+.hero-v6 .hero-subtitle{font-size:clamp(1.05rem,1.45vw,1.48rem);margin-bottom:28px;max-width:480px}
+.hero-v6 .hero-actions{gap:12px;flex-wrap:nowrap}
+.hero-v6 .button{font-size:clamp(.84rem,1vw,1.13rem);min-height:52px;padding:11px 15px;white-space:nowrap}
+.hero-v6 .button-primary{gap:14px}
+.hero-v6 .button-outline{min-width:0}
+.hero-v6 .hero-star-two{left:32%;opacity:.65}
+/* Never compromise the transparent fixed menu when editing the hero. */
+@media(max-width:1250px) and (min-width:761px){
+  .hero-v6{min-height:max(690px,56.28vw)}
+  .hero-v6 .hero-copy{width:43%}
+  .hero-v6 .hero-content.shell{width:calc(100% - 50px)}
+  .hero-v6 h1{font-size:clamp(2.1rem,3.6vw,3.8rem)}
+  .hero-v6 .hero-actions{flex-wrap:wrap}
+  .hero-v6 .button{font-size:.94rem}
+}
+@media(max-width:760px){
+  .hero-v6{min-height:0;background:#100c19}
+  .hero-v6 .hero-collage{inset:auto -1% 0 -1%;width:102%;height:min(87vw,540px);background-image:url('assets/hero-collage-mobile-v6.webp');background-size:contain;background-position:center bottom;}
+  .hero-v6 .hero-content.shell{width:min(calc(100% - 36px),600px);padding-top:calc(var(--v4-header-start) + 48px);padding-bottom:min(93vw,560px)}
+  .hero-v6 .hero-copy{width:100%;max-width:none;transform:none}
+  .hero-v6 .hero-night{background:linear-gradient(180deg,rgba(10,8,17,.75),rgba(11,8,20,.27) 43%,transparent 63%)}
+  .hero-v6 .hero-grain::before{opacity:.12;mask-image:linear-gradient(180deg,#000,transparent 75%)}
+  .hero-v6 h1{font-size:clamp(2.05rem,7.6vw,4rem);line-height:1.04;letter-spacing:-.052em}
+  .hero-v6 .hero-actions{flex-wrap:wrap}
+  .hero-v6 .hashtag{font-size:clamp(1.66rem,6.3vw,2.8rem)}
+  .hero-v6 .hero-subtitle{font-size:clamp(.98rem,3.1vw,1.2rem)}
+}
+@media(max-width:430px){
+  .hero-v6 .hero-content.shell{padding-top:calc(var(--v4-header-start) + 37px);padding-bottom:85vw}
+  .hero-v6 .hero-collage{height:80vw;background-size:100% auto;background-position:right bottom}
+  .hero-v6 h1{font-size:clamp(1.98rem,7.75vw,2.5rem)}
+  .hero-v6 .hero-eyebrow{font-size:.65rem}
+  .hero-v6 .hero-actions .button{white-space:normal}
+}
+/* Editorial tall type, integrated with the artwork (desktop only). */
+@media(min-width:1251px){
+  .hero-v6 .hero-collage{background-size:96% 96%;background-position:right center}
+  .hero-v6 .hero-copy{transform:translateY(-69px)}
+  .hero-v6 h1{font-size:clamp(3.6rem,4.95vw,5.45rem);line-height:1.065;letter-spacing:-.05em;transform:scaleX(.74);transform-origin:top left;width:135%;}
+}
+@media(min-width:761px) and (max-width:1250px){
+  .hero-v6 .hero-collage{background-size:96% 96%;background-position:right center}
+  .hero-v6 .hero-copy{transform:translateY(-38px)}
+  .hero-v6 h1{font-size:clamp(2.6rem,4.8vw,4.1rem);line-height:1.045;transform:scaleX(.78);transform-origin:top left;width:128%;}
+}
+/* Vertical alignment matched to the approved art direction. */
+@media(min-width:1251px){.hero-v6 .hero-copy{transform:translateY(-38px)}}
+@media(min-width:761px) and (max-width:1250px){.hero-v6 .hero-copy{transform:translateY(2px)}}
