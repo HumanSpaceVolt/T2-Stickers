@@ -1,0 +1,52 @@
+/* T²-Stickers V17.6 · Pulido exclusivamente de colecciones/gatonautas.html.
+   No modifica el HERO principal, las demás colecciones, las imágenes de producto ni Mi Pedido. */
+.collection-page-gatonautas #disenos.collection-designs {
+  padding-top: 13px;
+}
+.collection-page-gatonautas #disenos .section-heading {
+  margin-bottom: 13px;
+}
+.collection-page-gatonautas #disenos .section-heading h2 {
+  margin-top: 0;
+}
+/* Quita únicamente el enlace fantasma del antiguo CTA de escritorio. */
+.collection-page-gatonautas .gatonautas-hotspot-designs { display: none !important; }
+/* La nueva flecha es un enlace HTML real, sin modificar el arte del collage. */
+.collection-page-gatonautas .gatonautas-hero-v173 .gatonautas-scroll-cue {
+  position:absolute; z-index:6; left:50%; bottom:9px;
+  transform:translateX(-50%);
+  width:46px; height:46px; display:flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  color:#e3b8ff;
+  background:radial-gradient(circle,rgba(16,7,38,.52),rgba(16,7,38,0) 75%);
+  text-shadow:0 0 12px rgba(203,145,255,.6);
+  transition:color .2s ease, background .2s ease;
+}
+.collection-page-gatonautas .gatonautas-hero-v173 .gatonautas-scroll-cue:hover {
+  color:white; background:radial-gradient(circle,rgba(106,55,154,.65),rgba(16,7,38,0) 80%);
+}
+.collection-page-gatonautas .gatonautas-hero-v173 .gatonautas-scroll-cue:focus-visible {
+  outline:2px solid #f3dcff; outline-offset:2px;
+}
+.collection-page-gatonautas .gatonautas-scroll-cue svg {
+  display:block; animation:gatonautas-invita-bajar 2.8s ease-in-out infinite;
+  filter:drop-shadow(0 0 5px rgba(208,141,255,.5));
+}
+@keyframes gatonautas-invita-bajar {
+  0%, 100% { transform:translateY(-3px); opacity:.78; }
+  50% { transform:translateY(4px); opacity:1; }
+}
+/* Solo móvil: no hay CTA de Ver diseños; se conserva 'Todas las colecciones' discretamente. */
+@media(max-width:900px) {
+  .collection-page-gatonautas .gatonautas-mobile-copy .collection-lead-actions { margin-top:14px; }
+  .collection-page-gatonautas .gatonautas-mobile-copy .collection-lead-actions .button-outline {
+    border-color:rgba(219,174,255,.45);
+    background:transparent; color:#dfc5f0; padding:9px 15px; font-size:.94rem;
+  }
+  .collection-page-gatonautas .gatonautas-hero-v173 .gatonautas-scroll-cue { bottom:5px; }
+  .collection-page-gatonautas #disenos.collection-designs { padding-top:12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .collection-page-gatonautas .gatonautas-scroll-cue svg { animation:none; transform:none; }
+  .collection-page-gatonautas .gatonautas-hero-v173 .gatonautas-scroll-cue { transition:none; }
+}

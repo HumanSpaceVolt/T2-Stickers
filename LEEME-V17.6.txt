@@ -1,0 +1,23 @@
+T²-STICKERS V17.6 — GATONAUTAS · PULIDO DE NAVEGACIÓN
+
+Partimos de la V17.5, sin cambiar otras colecciones o el HERO principal.
+
+• HERO de Gatonautas: se mantiene la composición V4 aprobada.
+• Se elimina el botón “Ver diseños” integrado en la imagen de escritorio
+  mediante una reparación localizada de su área, sin regenerar los gatos.
+• Se conserva “Todas las colecciones”, con su enlace real.
+• En móvil se elimina “Ver diseños”, se mantiene el enlace secundario.
+• Se añade flecha animada (enlace funcional) hacia #disenos.
+• Se respeta la preferencia de movimiento reducido.
+• “Explora Gatonautas” comienza más cerca del HERO; se retira el
+  rótulo redundante “Diseños de la línea”.
+• Se mantiene intacta la cuadrícula 4 + 4 + 3 en escritorio, con
+  adaptaciones a tablet y móvil, las 11 imágenes WebP firmadas, sus
+  etiquetas, buscador y carrito discreto de la V17.5.
+
+USO
+1. Extrae el ZIP completo.
+2. Abre index.html y entra a Gatonautas.
+3. En la página de Gatonautas verifica flecha, cuadrícula y Mi Pedido.
+
+Se trata de una versión local de revisión. No publica cambios en GitHub.

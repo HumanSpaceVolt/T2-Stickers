@@ -1,0 +1,84 @@
+/* V17.3 - HERO Gatonautas aprobado V4, completo y sin cuadro difuminado.
+   Únicamente interviene el encabezado de colecciones/gatonautas.html.
+   La composición de escritorio es exactamente la V4 aprobada, no un recorte sobre fondo distinto. */
+.collection-page-gatonautas .collection-lead.gatonautas-hero-v173 {
+  position:relative; min-height:0; background:#0b061c; isolation:isolate;
+  padding:0; margin:0; overflow:hidden;
+}
+.collection-page-gatonautas .gatonautas-hero-v173::before,
+.collection-page-gatonautas .gatonautas-hero-v173::after { display:none; }
+.collection-page-gatonautas .gatonautas-hero-desktop {
+  display:block; position:relative; width:100%; aspect-ratio:2300 / 990;
+}
+.collection-page-gatonautas .gatonautas-hero-original {
+  display:block; position:absolute; inset:0; width:100%; height:100%;
+  object-fit:contain;
+}
+.collection-page-gatonautas .gatonautas-hero-accessible,
+.collection-page-gatonautas .gatonautas-visually-hidden {
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+.collection-page-gatonautas .gatonautas-hotspot {
+  position:absolute; z-index:3; display:block; border-radius:7px;
+  background:transparent; outline:none;
+}
+.collection-page-gatonautas .gatonautas-hotspot:hover { box-shadow:inset 0 0 0 2px #f4dfff99; }
+.collection-page-gatonautas .gatonautas-hotspot:focus-visible { outline:3px solid #ffffff; outline-offset:2px; }
+.collection-page-gatonautas .gatonautas-hotspot-designs {
+  left:3.5%; top:69.3%; width:11.9%; height:7.4%;
+}
+.collection-page-gatonautas .gatonautas-hotspot-collections {
+  left:15.8%; top:69.3%; width:13.4%; height:7.4%;
+}
+.collection-page-gatonautas .gatonautas-hotspot-crumb-home {left:3.6%; top:5.2%; width:3.6%; height:5.2%;}
+.collection-page-gatonautas .gatonautas-hotspot-crumb-collections {left:8%; top:5.2%; width:7%; height:5.2%;}
+.collection-page-gatonautas .gatonautas-hero-mobile {display:none;}
+.collection-page-gatonautas .gatonautas-hero-v173 .collection-bottom-edge {z-index:4; height:15px;}
+@media (max-width:900px) {
+  .collection-page-gatonautas .gatonautas-hero-desktop {display:none;}
+  .collection-page-gatonautas .gatonautas-hero-mobile {
+    display:flex; flex-direction:column; position:relative;
+    background:radial-gradient(ellipse at 75% 65%,#4b2374 0%,#160b33 44%,transparent 78%),#0b061b;
+  }
+  .collection-page-gatonautas .gatonautas-mobile-copy {
+    position:relative; z-index:2; width:100%; padding-top:38px; padding-bottom:14px;
+  }
+  .collection-page-gatonautas .gatonautas-mobile-copy .breadcrumbs {margin-bottom:30px;}
+  .collection-page-gatonautas .gatonautas-mobile-copy h1 {
+    font-family:var(--t2-narrow);font-weight:700;letter-spacing:-.01em;
+    text-transform:uppercase;color:#f7ecff; font-size:clamp(3rem,11vw,5.8rem);
+    line-height:1; margin:8px 0 20px;
+  }
+  .collection-page-gatonautas .gatonautas-mobile-copy h1 .dot {color:#dfb3f7;}
+  .collection-page-gatonautas .gatonautas-mobile-copy .collection-tagline {font-size:clamp(1.75rem,5.5vw,2.5rem);}
+  .collection-page-gatonautas .gatonautas-mobile-copy .collection-about {font-size:1.05rem;}
+  .collection-page-gatonautas .gatonautas-mobile-art {
+    display:block;width:100%;height:auto;object-fit:contain;margin-top:0;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 13%,black 100%);
+    mask-image:linear-gradient(to bottom,transparent 0%,black 13%,black 100%);
+  }
+}
+@media(max-width:420px) {
+  .collection-page-gatonautas .gatonautas-mobile-copy {padding-top:22px;}
+  .collection-page-gatonautas .gatonautas-mobile-copy .collection-lead-actions {gap:9px;}
+  .collection-page-gatonautas .gatonautas-mobile-copy .collection-lead-actions .button {font-size:.98rem;}
+}
+
+/* V17.12 — acabado perlado/lavanda inspirado en el HERO principal.
+   Exclusivamente color y textura de letras; fuente, tamaños y distribución originales. */
+@media (max-width:900px) {
+  .collection-page-gatonautas .gatonautas-mobile-copy h1 {
+    background-image: linear-gradient(167deg, #f3dcff 0%, #deb0f7 23%, #bb7ae7 47%, #e6adf6 68%, #bd83e8 100%);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .collection-page-gatonautas .gatonautas-mobile-copy h1 .dot {
+    -webkit-text-fill-color:#dfb3f7;
+  }
+  .collection-page-gatonautas .gatonautas-mobile-copy .collection-tagline {
+    background-image:linear-gradient(173deg,#fff 0%,#f0e8f6 26%,#e0cce9 53%,#f9f3fb 74%,#e2c8ec 100%);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+}

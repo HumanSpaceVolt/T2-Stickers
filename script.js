@@ -75,7 +75,12 @@ function normalize(value) {
 function matchesFor(value) {
   const query = normalize(value.trim());
   if (!query) return [];
-  return (window.T2_PRODUCTS || []).filter(p => normalize(p.name + ' ' + p.category).includes(query));
+  const words = query.split(/\s+/).filter(Boolean);
+  return (window.T2_PRODUCTS || []).filter(p => {
+    const tags = Array.isArray(p.tags) ? p.tags.join(' ') : '';
+    const searchable = normalize(`${p.name} ${p.category} ${tags}`);
+    return words.every(word => searchable.includes(word));
+  });
 }
 
 function runSearch(value) {

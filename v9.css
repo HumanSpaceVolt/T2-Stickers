@@ -81,3 +81,8 @@
 .collection-intro h1{font-size:clamp(4.1rem,6.1vw,6.5rem)}
 @media(max-width:760px){.collection-intro h1{font-size:clamp(3.2rem,13vw,5.5rem)}}
 @media(max-width:430px){.collection-intro h1{font-size:clamp(3.05rem,13vw,4.25rem)}}
+
+/* V17 · Avisos de marca de agua en galerías y vistas ampliadas */
+.gallery-watermark-note{margin:0 0 22px;font-family:var(--t2-readable);font-size:.92rem;line-height:1.55;color:#bcaaca}
+.gallery-watermark-note strong{color:#e5c7ff;font-weight:700}
+.lightbox-watermark-note{text-align:center;font-family:var(--t2-readable);font-size:.87rem;line-height:1.5;color:#dcc5ee;margin:10px auto 0;max-width:580px}

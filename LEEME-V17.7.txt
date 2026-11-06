@@ -1,0 +1,10 @@
+T²-STICKERS V17.7 · Ajustes de posición
+
+1. El botón «Todas las colecciones» se centró dentro del espacio libre que Human marcó. Se reutilizó el botón del arte aprobado, sin redibujar el collage ni los personajes.
+2. Se subió ligeramente «Explora Gatonautas» para reducir la separación visual.
+3. La flecha lavanda, animada y clicable, aparece en la transición de la galería y baja suavemente a los 11 stickers. Respeta preferencias de movimiento reducido.
+4. El resto del proyecto, incluidos HERO principal, catálogo, firmas y carrito discreto, permanece sin cambios.
+
+USO: Extraer ZIP completo y abrir index.html; entrar a Gatonautas.
+PRUEBA LOCAL: para un servidor web, ejecutar desde esa carpeta python -m http.server 8000.
+La versión se entrega para revisión. No está publicada en GitHub.

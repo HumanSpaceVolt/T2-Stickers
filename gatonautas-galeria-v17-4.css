@@ -1,0 +1,137 @@
+/* T²-Stickers V17.4 — Solo galería Gatonautas.
+   HERO aprobado V17.3 / HERO principal y demás colecciones: sin cambios.
+   Escritorio 4+4+3; tablet 3 columnas; móvil 2 columnas. */
+
+/* Acerca la sección de diseños al borde inferior del HERO: el espacio
+   anterior provenía de padding-top:85px en v9.css. */
+.collection-page-gatonautas #disenos.collection-designs {
+  padding-top: 26px;
+  padding-bottom: 64px;
+}
+.collection-page-gatonautas #disenos .section-heading {
+  margin-bottom: 15px;
+  gap: 26px;
+}
+.collection-page-gatonautas #disenos .gallery-watermark-note {
+  margin-bottom: 18px;
+}
+
+/* Galería compacta: once diseños en 3 filas (4, 4 y 3). */
+.collection-page-gatonautas #disenos .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+.collection-page-gatonautas #disenos .gallery-product {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: 12px;
+}
+.collection-page-gatonautas #disenos .gallery-visual {
+  flex: none;
+  aspect-ratio: 1 / .84;
+  height: auto;
+  min-height: 0;
+  padding: 14px;
+}
+.collection-page-gatonautas #disenos .gallery-visual::before {
+  inset: 9px;
+}
+.collection-page-gatonautas #disenos .zoom-hint {
+  right: 9px;
+  bottom: 9px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: .79rem;
+}
+.collection-page-gatonautas #disenos .gallery-product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 13px 14px 15px;
+}
+.collection-page-gatonautas #disenos .gallery-product-info h3 {
+  font-size: 1.48rem;
+  line-height: 1.15;
+  margin: 3px 0 4px;
+}
+.collection-page-gatonautas #disenos .gallery-product-info p {
+  font-size: .89rem;
+  line-height: 1.35;
+  margin: 0;
+}
+.collection-page-gatonautas #disenos .gallery-kicker {
+  font-size: .72rem;
+}
+.collection-page-gatonautas #disenos .product-card-actions {
+  margin-top: 10px !important;
+  width: 100%;
+}
+.collection-page-gatonautas #disenos .product-variants select {
+  min-width: 0;
+  max-width: 100%;
+  font-size: .76rem;
+}
+.collection-page-gatonautas #disenos .btn-add-cart {
+  padding: 7px 9px;
+  min-height: 36px;
+}
+
+/* Tablet: 3 x 3 + 2; no se reduce la legibilidad de los controles. */
+@media (max-width: 1050px) {
+  .collection-page-gatonautas #disenos .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+/* Móvil: dos fichas por fila para evitar 11 filas larguísimas. */
+@media (max-width: 700px) {
+  .collection-page-gatonautas #disenos.collection-designs {
+    padding-top: 22px;
+    padding-bottom: 44px;
+  }
+  .collection-page-gatonautas #disenos .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .collection-page-gatonautas #disenos .gallery-visual {
+    aspect-ratio: 1 / .93;
+    padding: 9px;
+  }
+  .collection-page-gatonautas #disenos .gallery-product-info {
+    padding: 10px 9px 12px;
+  }
+  .collection-page-gatonautas #disenos .gallery-product-info h3 {
+    font-size: 1.24rem;
+  }
+  .collection-page-gatonautas #disenos .gallery-product-info p {
+    font-size: .79rem;
+  }
+  .collection-page-gatonautas #disenos .product-variants {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .collection-page-gatonautas #disenos .product-variants select {
+    width: 100%;
+  }
+  .collection-page-gatonautas #disenos .btn-add-cart {
+    font-size: .77rem;
+  }
+  .collection-page-gatonautas #disenos .zoom-hint {
+    font-size: .72rem;
+    padding: 3px 6px;
+  }
+}
+@media (max-width: 350px) {
+  .collection-page-gatonautas #disenos .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .collection-page-gatonautas #disenos .gallery-visual {
+    aspect-ratio: 1 / .77;
+  }
+}

@@ -1,0 +1,52 @@
+/* T²-Stickers V17.7 · ajustes puntuales al encabezado de Gatonautas.
+   Solo centra el CTA dentro del espacio disponible y ajusta la transición a la galería. */
+@media (min-width:901px) {
+  /* Zona visual desplazada en el mismo arte V4, conservando texto, collage y función del vínculo. */
+  .collection-page-gatonautas .gatonautas-hotspot-collections {
+    left:11.0%; top:70.6%; width:13.55%; height:7.4%;
+  }
+  .collection-page-gatonautas #disenos.collection-designs {
+    padding-top:0;
+  }
+}
+.collection-page-gatonautas #disenos.collection-designs {
+  position:relative;
+}
+/* Flecha real en la transición, en la zona central libre entre titular y descripción. */
+.collection-page-gatonautas #disenos .gatonautas-scroll-cue {
+  position:absolute;
+  display:flex;align-items:center;justify-content:center;
+  z-index:5;
+  top:48px; left:52%; transform:translateX(-50%);
+  width:48px;height:48px; border-radius:50%;
+  color:#e5c1ff;
+  background:radial-gradient(circle,rgba(68,31,103,.32),rgba(16,7,38,0) 76%);
+  transition:color .2s ease, background .2s ease;
+}
+.collection-page-gatonautas #disenos .gatonautas-scroll-cue:hover {
+  color:#fff;
+  background:radial-gradient(circle,rgba(121,65,171,.65),rgba(16,7,38,0) 80%);
+}
+.collection-page-gatonautas #disenos .gatonautas-scroll-cue:focus-visible {
+  outline:2px solid #f4dcff;outline-offset:2px;
+}
+.collection-page-gatonautas #disenos .gatonautas-scroll-cue svg {
+  display:block;
+  animation:gatonautas-invita-bajar 2.8s ease-in-out infinite;
+  filter:drop-shadow(0 0 5px rgba(208,141,255,.48));
+}
+.collection-page-gatonautas #galeria-gatonautas { scroll-margin-top:90px; }
+@media (max-width:1050px) {
+  .collection-page-gatonautas #disenos .gatonautas-scroll-cue {
+    left:50%; top:-23px; width:45px;height:45px;
+    background:radial-gradient(circle,#251138dd,#25113800 78%);
+  }
+}
+@media (max-width:700px) {
+  .collection-page-gatonautas #disenos.collection-designs { padding-top:15px; }
+  .collection-page-gatonautas #disenos .gatonautas-scroll-cue { top:-30px; }
+  .collection-page-gatonautas #galeria-gatonautas {scroll-margin-top:75px;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .collection-page-gatonautas #disenos .gatonautas-scroll-cue svg { animation:none; transform:none; }
+}

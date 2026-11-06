@@ -1,0 +1,11 @@
+T²-Stickers V17.9 — Ajuste de cristales Gatonautas
+
+Partimos de la V17.8. Cambios mínimos:
+- Formación de cristal del HERO de Gatonautas reconstruida en una sola composición, sin el parche difuminado ni los cristales duplicados.
+- Archivo específico nuevo: assets/gatonautas/hero-v4-cristal-coherente-v17-9.webp
+- Se actualiza la referencia de imagen en colecciones/gatonautas.html.
+
+Sin cambios en: HERO principal, los 11 stickers de la galería, firmas T², precios, scripts del pedido, estilos, cuadrícula o el espaciado de las tarjetas V17.8.
+
+Es una vista local para aprobación. No se ha publicado en GitHub.
+Abra index.html y luego Gatonautas.

@@ -1,0 +1,9 @@
+T²-STICKERS — V17.3 • HERO GATONAUTAS V4 APROBADO
+
+ABRE index.html o colecciones/gatonautas.html. La versión de escritorio utiliza la composición V4 COMPLETA como una sola imagen continua, no un panel rectangular sobre otro fondo. Los botones Ver diseños y Todas las colecciones son enlaces HTML activos superpuestos sobre los que aparecen en el diseño aprobado. Los enlaces Inicio y Colecciones del encabezado también funcionan.
+
+En pantallas pequeñas, el texto y los botones son HTML reales y se muestra el collage original, recortado de la misma obra, para que el texto permanezca legible.
+
+Incluye 11 fichas Gatonautas en WebP con firma T², etiquetas buscables, las demás colecciones y Mi Pedido. El HERO principal de index.html no fue modificado. No hay PNG originales sueltos en el proyecto.
+
+IMPORTANTE: Es una versión local para revisión. NO está publicada en GitHub.

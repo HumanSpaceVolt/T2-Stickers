@@ -1,0 +1,17 @@
+T²-STICKERS — V17.5 — MI PEDIDO SIN INTERRUPCIONES
+
+Cambios sobre la V17.4 aprobada:
+- Al pulsar «Agregar al pedido», se acumula el producto sin abrir el panel lateral.
+- La bolsita muestra su contador, que permanece visible mientras haya artículos.
+- Animación breve de bolsita y contador cada vez que se agrega un sticker.
+- El botón confirma «✓ Agregado» durante 1,15 s y vuelve a su texto original.
+- Aviso flotante «✓ Agregado a Mi Pedido» durante 1,9 s, sin bloquear interacciones.
+- En escritorio, al pasar el ratón sobre la bolsita aparece «Abrir mi pedido».
+- En móvil, el icono se toca para abrir el pedido. Soporta foco por teclado.
+- Se respeta la preferencia del sistema de reducir animaciones.
+- No se modifican HERO, galerías, imágenes ni precios.
+
+Para probar: extraer el ZIP, abrir index.html, agregar un sticker y luego abrir
+la bolsita de Mi Pedido para revisar los artículos acumulados.
+
+Cambios locales para revisión: no se publicó en GitHub.

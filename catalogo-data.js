@@ -1,1 +1,304 @@
-window.T2_PRODUCTS = [{"name":"Abducción SK8","category":"SK8","url":"colecciones/sk8.html#disenos","image":"assets/alien-sk8.webp"},{"name":"Patineta en llamas","category":"SK8","url":"colecciones/sk8.html#disenos","image":"assets/patineta-sk8.webp"},{"name":"Gato amuleto","category":"Místico","url":"colecciones/mistico.html#disenos","image":"assets/gato-mistico.webp"},{"name":"Velita mística","category":"Místico","url":"colecciones/mistico.html#disenos","image":"assets/gato-vela.webp"},{"name":"Gato curioso","category":"Gatonautas","url":"colecciones/gatonautas.html#disenos","image":"assets/gatonauta-telescopio.webp"},{"name":"Luna de queso","category":"Gatonautas","url":"colecciones/gatonautas.html#disenos","image":"assets/gatonauta-luna.webp"},{"name":"VIVE","category":"Calaquitas","url":"colecciones/calaquitas.html#disenos","image":"assets/calavera-vive.webp"},{"name":"Calaca astronauta","category":"Calaquitas","url":"colecciones/calaquitas.html#disenos","image":"assets/calaca-astronauta.webp"}];
+window.T2_PRODUCTS = [
+  {
+    "name": "Abducción SK8",
+    "category": "SK8",
+    "url": "colecciones/sk8.html#disenos",
+    "image": "assets/alien-sk8.webp"
+  },
+  {
+    "name": "Patineta en llamas",
+    "category": "SK8",
+    "url": "colecciones/sk8.html#disenos",
+    "image": "assets/patineta-sk8.webp"
+  },
+  {
+    "name": "Gato amuleto",
+    "category": "Místico",
+    "url": "colecciones/mistico.html#disenos",
+    "image": "assets/gato-mistico.webp"
+  },
+  {
+    "name": "Velita mística",
+    "category": "Místico",
+    "url": "colecciones/mistico.html#disenos",
+    "image": "assets/gato-vela.webp"
+  },
+  {
+    "name": "VIVE",
+    "category": "Calaquitas",
+    "url": "colecciones/calaquitas.html#disenos",
+    "image": "assets/calavera-vive.webp"
+  },
+  {
+    "name": "Calaca astronauta",
+    "category": "Calaquitas",
+    "url": "colecciones/calaquitas.html#disenos",
+    "image": "assets/calaca-astronauta.webp"
+  },
+  {
+    "name": "Gato arcoíris",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#gato-arcoiris",
+    "image": "assets/gatonautas/gatonautas-gato-arcoiris.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "arcoíris",
+      "arcoiris",
+      "colores",
+      "planetas",
+      "anillos",
+      "alegría"
+    ]
+  },
+  {
+    "name": "Gato bailarín",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#gato-bailarin",
+    "image": "assets/gatonautas/gatonautas-gato-bailarin.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "baile",
+      "bailar",
+      "bailarín",
+      "danza",
+      "movimiento",
+      "feliz"
+    ]
+  },
+  {
+    "name": "Gato conquistador",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#gato-conquistador",
+    "image": "assets/gatonautas/gatonautas-gato-conquistador.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "explorador",
+      "exploración",
+      "bandera",
+      "galaxia",
+      "aventura"
+    ]
+  },
+  {
+    "name": "Gato curioso",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#gato-curioso",
+    "image": "assets/gatonautas/gatonautas-gato-curioso.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "telescopio",
+      "estrellas",
+      "observar",
+      "astronomía",
+      "explorador"
+    ]
+  },
+  {
+    "name": "Gato feliz",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#gato-feliz",
+    "image": "assets/gatonautas/gatonautas-gato-feliz.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "felicidad",
+      "alegría",
+      "sonrisa",
+      "tierno",
+      "celebración"
+    ]
+  },
+  {
+    "name": "Gato gamer",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#gato-gamer",
+    "image": "assets/gatonautas/gatonautas-gato-gamer.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "gamer",
+      "videojuegos",
+      "gaming",
+      "control",
+      "computadora",
+      "pc",
+      "juegos"
+    ]
+  },
+  {
+    "name": "Gato jardinero",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#gato-jardinero",
+    "image": "assets/gatonautas/gatonautas-gato-jardinero.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "jardinería",
+      "jardineria",
+      "flores",
+      "flor",
+      "planta",
+      "regar",
+      "regadera",
+      "naturaleza",
+      "maceta"
+    ]
+  },
+  {
+    "name": "Luna de queso",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#luna-de-queso",
+    "image": "assets/gatonautas/gatonautas-gato-luna-queso.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "luna",
+      "queso",
+      "comida",
+      "antojo",
+      "tierno",
+      "galleta"
+    ]
+  },
+  {
+    "name": "Gato planeta",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#gato-planeta",
+    "image": "assets/gatonautas/gatonautas-gato-planeta.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "tierra",
+      "planeta",
+      "mundo",
+      "naturaleza",
+      "ecología",
+      "ecologia"
+    ]
+  },
+  {
+    "name": "Gato selfie",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#gato-selfie",
+    "image": "assets/gatonautas/gatonautas-gato-selfie.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "selfie",
+      "fotografía",
+      "fotografia",
+      "celular",
+      "cámara",
+      "camara",
+      "foto"
+    ]
+  },
+  {
+    "name": "Rocket Cat",
+    "category": "Gatonautas",
+    "url": "colecciones/gatonautas.html#rocket-cat",
+    "image": "assets/gatonautas/gatonautas-rocket-cat.webp",
+    "tags": [
+      "gato",
+      "gatito",
+      "felino",
+      "gatonauta",
+      "astronauta",
+      "kawaii",
+      "espacio",
+      "cosmos",
+      "universo",
+      "sticker",
+      "cohete",
+      "rocket",
+      "nave",
+      "despegar",
+      "aventura",
+      "espacial"
+    ]
+  }
+];

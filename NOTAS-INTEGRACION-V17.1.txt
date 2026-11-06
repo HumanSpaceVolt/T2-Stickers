@@ -1,0 +1,15 @@
+T²-STICKERS — Preparación local Gatonautas V17.1 (NO PUBLICADA)
+
+Se conservaron INTACTOS los recursos y la composición del HERO de la página principal.
+
+- 11 WebP finales con firma T², 900 × 900, tomadas de la aprobación V17.1.
+- Sustituidas las dos imágenes antiguas de Gatonautas en las vistas ajenas al HERO.
+- Catálogo de Gatonautas reemplazado completamente (no se duplican Gato curioso ni Luna de queso).
+- Avisos de marca de agua agregados a la galería y al visor.
+- Buscador reconoce etiquetas; cada resultado apunta al diseño correspondiente.
+- No se incluyeron originales PNG. Las otras colecciones siguen intactas.
+- Precios y sistema de pedidos existente no se modificaron.
+
+Este ZIP es una vista preparada para revisión. NO se ha fusionado ni publicado en GitHub.
+Se recomienda probar escritorio y móvil y hacer una revisión visual antes de fusionar.
+El contenido antiguo podría permanecer accesible en el historial de un repo público.

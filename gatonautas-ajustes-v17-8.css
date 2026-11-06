@@ -1,0 +1,14 @@
+/* T²-Stickers V17.8 — cierre visual Gatonautas.
+   Solo separa los recuadros de productos del encabezado de la galería.
+   No modifica el HERO principal, el título, el aviso, las 11 tarjetas ni Mi Pedido. */
+@media (min-width: 901px) {
+  .collection-page-gatonautas #galeria-gatonautas.gallery-grid {
+    margin-top: clamp(86px, 5.5vw, 112px);
+  }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .collection-page-gatonautas #galeria-gatonautas.gallery-grid { margin-top: 44px; }
+}
+@media (max-width: 700px) {
+  .collection-page-gatonautas #galeria-gatonautas.gallery-grid { margin-top: 25px; }
+}

@@ -1,0 +1,12 @@
+T²-Stickers V17.8 — Revisión local Gatonautas
+
+Cambios precisos respecto a V17.7:
+- Corregido el área del cristal izquierdo del HERO de la colección, sin alterar los personajes ni el resto del collage.
+- Bajada SOLO la cuadrícula de tarjetas (#galeria-gatonautas) para que no asomen los recuadros en la primera pantalla de escritorio.
+- «Explora Gatonautas», aviso y flecha permanecen en su lugar.
+- Sin cambios en HERO principal, otras colecciones, galería 4+4+3, WebP de stickers ni carrito.
+
+Para abrir: extrae el ZIP completo y abre index.html.
+Para aplicar el parche a V17.7: extrae el ZIP de actualización dentro de esa carpeta, conservando subcarpetas y reemplazando archivos.
+
+GitHub no ha sido modificado. La web local está lista para tu revisión.

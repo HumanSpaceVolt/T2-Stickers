@@ -1,0 +1,17 @@
+T²-STICKERS — V17.4 LOCAL DE REVISIÓN
+
+Cambios exclusivos de la página colecciones/gatonautas.html:
+1) Se redujo la separación HERO → DISEÑOS DE LA LÍNEA.
+2) Galería de los 11 Gatonautas en 4 columnas de escritorio (4 + 4 + 3).
+3) Tablet 3 columnas; móvil 2 columnas; pantallas extremadamente estrechas 1.
+4) Tamaños de miniaturas, tipografías y controles de las fichas más compactos.
+5) Se mantuvieron los 11 WebP con firma T², sus descripciones, el buscador, zoom, variantes y Mi Pedido.
+
+El collage V4 del HERO de Gatonautas se mantiene sin modificación.
+El HERO PRINCIPAL de T²-Stickers se mantiene intacto.
+No se ha publicado esta versión en GitHub.
+
+Cómo probar:
+- Descomprime todo el ZIP.
+- Abre index.html y entra a la colección Gatonautas.
+- Para revisar la galería directamente: colecciones/gatonautas.html#disenos.

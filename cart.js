@@ -56,7 +56,52 @@ function addToCart(product) {
     });
   }
   saveCart();
-  openCartDrawer();
+  animateCartFeedback();
+}
+
+
+/* V17.5: La compra se confirma sin interrumpir la exploración. */
+let cartFeedbackTimer;
+const cartButtonTimers = new WeakMap();
+
+function animateCartFeedback() {
+  const trigger = document.querySelector('#cart-toggle-btn');
+  if (trigger) {
+    // Reiniciar la animación incluso si se añaden dos stickers seguidos.
+    trigger.classList.remove('cart-just-added');
+    void trigger.offsetWidth;
+    trigger.classList.add('cart-just-added');
+    clearTimeout(cartButtonTimers.get(trigger));
+    cartButtonTimers.set(trigger, setTimeout(() => trigger.classList.remove('cart-just-added'), 750));
+  }
+
+  // Un aviso de confirmación discreto, no interactivo y accesible.
+  let feedback = document.querySelector('#cart-add-feedback');
+  if (!feedback) {
+    feedback = document.createElement('div');
+    feedback.id = 'cart-add-feedback';
+    feedback.className = 'cart-add-feedback';
+    feedback.setAttribute('role', 'status');
+    feedback.setAttribute('aria-live', 'polite');
+    feedback.setAttribute('aria-atomic', 'true');
+    document.body.appendChild(feedback);
+  }
+  feedback.textContent = '✓ Agregado a Mi Pedido';
+  feedback.classList.add('is-visible');
+  clearTimeout(cartFeedbackTimer);
+  cartFeedbackTimer = setTimeout(() => feedback.classList.remove('is-visible'), 1900);
+}
+
+function confirmAddButton(button) {
+  if (!button) return;
+  if (!button.dataset.originalLabel) button.dataset.originalLabel = button.textContent.trim();
+  button.textContent = '✓ Agregado';
+  button.classList.add('is-added');
+  clearTimeout(cartButtonTimers.get(button));
+  cartButtonTimers.set(button, setTimeout(() => {
+    button.textContent = button.dataset.originalLabel;
+    button.classList.remove('is-added');
+  }, 1150));
 }
 
 function updateItemQty(uid, delta) {
@@ -89,6 +134,7 @@ function renderCartUI() {
     badge.textContent = totalUnits;
     badge.hidden = totalUnits === 0;
   }
+  document.querySelector('#cart-toggle-btn')?.classList.toggle('has-items', totalUnits > 0);
 
   if (!itemsContainer) return;
 
@@ -201,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const finish = card.querySelector('.select-finish')?.value || 'Normal';
 
       addToCart({ id, name, category, image, size, finish });
+      confirmAddButton(btn);
     });
   });
 });

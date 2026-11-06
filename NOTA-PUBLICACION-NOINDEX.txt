@@ -1,0 +1,5 @@
+T²-Stickers V17.12 — publicación con noindex
+La web sigue siendo pública para cualquiera con el enlace.
+La etiqueta robots noindex solicita no aparecer en buscadores; NO es control de acceso.
+Los archivos PNG originales no se incluyen; las imágenes de producto son WebP firmados.
+No se modificaron los productos, precios, WhatsApp, HERO ni funcionalidad.
